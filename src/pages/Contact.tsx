@@ -55,8 +55,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Call Us</h4>
-                    <p className="text-sm text-gray-800 font-medium">+91 98765 43210</p>
-                    <p className="text-sm text-gray-800 font-medium">+91 79 2345 6789</p>
+                    <p className="text-sm text-gray-800 font-medium">+91 9108315736</p>
+                    <p className="text-sm text-gray-800 font-medium">+91 9108315736</p>
                   </div>
                 </div>
 
