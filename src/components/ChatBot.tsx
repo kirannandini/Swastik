@@ -14,12 +14,12 @@ export default function ChatBot() {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
-      text: 'Hello! 👋 Welcome to Swastik.\n\nAre you looking for queries on AC ?',
+      text: 'Hello! 👋 Welcome to Swastik\nAre you looking to buy bathroom fittings?',
       sender: 'bot',
       timestamp: new Date(),
     },
   ]);
-  const [chatStep, setChatStep] = useState<'start' | 'askedSanitary' | 'finished'>('start');
+  const [chatStep, setChatStep] = useState<'start' | 'askedGrohe' | 'askedKohler' | 'finished'>('start');
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
@@ -36,9 +36,11 @@ export default function ChatBot() {
     e.preventDefault();
     if (!input.trim()) return;
 
+    const text = input.trim();
+
     const userMessage: Message = {
       id: Date.now().toString(),
-      text: input,
+      text,
       sender: 'user',
       timestamp: new Date(),
     };
@@ -48,33 +50,47 @@ export default function ChatBot() {
     setIsLoading(true);
 
     try {
-      const messageText = input.trim().toLowerCase();
+      const messageText = text.toLowerCase();
+      const isGreeting = /^(hi|hello|hey|hiya|hallo|yo|good morning|good afternoon|good evening)$/i.test(messageText);
       const isYes = /^(yes|y(es)?|yeah|yup|sure|ok|okay|of course|ya)$/i.test(messageText);
       const isNo = /^(no|n(o)?|nah|nope)$/i.test(messageText);
       let responseText = '';
 
-      if (chatStep === 'start') {
+      if (isGreeting) {
+        responseText = 'Are you looking to buy bathroom fittings?';
+        setChatStep('start');
+      } else if (chatStep === 'start') {
         if (isYes) {
-          responseText = 'Great! For AC queries, please call 9108315736.';
+          responseText = 'Please call 9741040290. Thank you, and have a nice day!';
           setChatStep('finished');
         } else if (isNo) {
-          responseText = 'Are you looking for queries on sanitary items?';
-          setChatStep('askedSanitary');
+          responseText = 'Are you looking for Grohe services?';
+          setChatStep('askedGrohe');
         } else {
-          responseText = 'Please answer with yes or no.\n\nAre you looking for queries on AC ?';
+          responseText = 'Please answer with yes or no.\n\nAre you looking to buy bathroom fittings?';
         }
-      } else if (chatStep === 'askedSanitary') {
+      } else if (chatStep === 'askedGrohe') {
         if (isYes) {
-          responseText = 'Sure! For sanitary items queries, please call 9036744112.';
+          responseText = 'Please call 9821224475. Thank you, and have a nice day!';
           setChatStep('finished');
         } else if (isNo) {
-          responseText = 'Okay. For AC queries call 9108315736. For sanitary items call 9036744112.';
+          responseText = 'Are you looking for Kohler services?';
+          setChatStep('askedKohler');
+        } else {
+          responseText = 'Please answer with yes or no.\n\nAre you looking for Grohe services?';
+        }
+      } else if (chatStep === 'askedKohler') {
+        if (isYes) {
+          responseText = 'Please call 18001032244. Thank you, and have a nice day!';
+          setChatStep('finished');
+        } else if (isNo) {
+          responseText = "If none of the above, please check the product’s official website to find the toll-free numbers for customer services. Thank you.";
           setChatStep('finished');
         } else {
-          responseText = 'Please answer with yes or no.\n\nAre you looking for queries on sanitary items?';
+          responseText = 'Please answer with yes or no.\n\nAre you looking for Kohler services?';
         }
       } else {
-        responseText = 'For AC queries call 9108315736. For sanitary items call 9036744112.';
+        responseText = "If you need anything else, say 'Hi' to start again or call 9741040290 for bathroom fittings.";
       }
 
       const botMessage: Message = {
@@ -88,7 +104,7 @@ export default function ChatBot() {
       console.error('Chat error:', error);
       const botMessage: Message = {
         id: (Date.now() + 1).toString(),
-        text: 'Thanks for reaching out! Please call 9108315736 for AC and 9036744112 for sanitary items.',
+        text: 'Thanks for reaching out! Please call 9741040290 for Bathroom fittings or 9821224475 for Grohe services.',
         sender: 'bot',
         timestamp: new Date(),
       };
@@ -108,7 +124,6 @@ export default function ChatBot() {
             exit={{ opacity: 0, scale: 0.8, y: 20 }}
             className="absolute bottom-20 right-0 w-96 bg-white rounded-lg shadow-2xl border border-gray-200 flex flex-col h-[500px] overflow-hidden"
           >
-            {/* Header */}
             <div className="bg-brand text-white p-4 flex justify-between items-center">
               <div>
                 <h3 className="font-bold text-lg">Swastik Support</h3>
@@ -122,7 +137,6 @@ export default function ChatBot() {
               </button>
             </div>
 
-            {/* Messages */}
             <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50">
               {messages.map((message) => (
                 <div
@@ -154,7 +168,6 @@ export default function ChatBot() {
               <div ref={messagesEndRef} />
             </div>
 
-            {/* Input */}
             <form onSubmit={handleSendMessage} className="border-t border-gray-200 p-4 bg-white">
               <div className="flex space-x-2">
                 <input
@@ -177,7 +190,6 @@ export default function ChatBot() {
         )}
       </AnimatePresence>
 
-      {/* Floating Button */}
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
         whileHover={{ scale: 1.1 }}

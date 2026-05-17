@@ -6,7 +6,6 @@ import ChatBot from './ChatBot';
 
 const navLinks = [
   { name: 'Home', path: '/' },
-  { name: 'Services', path: '/services' },
   { name: 'Products', path: '/products' },
   { name: 'Contact', path: '/contact' },
 ];
@@ -41,7 +40,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             </div>
             <div className="leading-none">
               <h1 className="text-lg font-extrabold text-brand-dark tracking-tight uppercase">Swastik</h1>
-              <p className="text-[10px] text-gray-500 uppercase tracking-widest font-semibold">Airconditioner & Ceramics</p>
+              <p className="text-[10px] text-gray-500 uppercase tracking-widest font-semibold">Ceramics & Co </p>
             </div>
           </Link>
 
@@ -120,12 +119,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           </div>
 
           <div>
-            <h3 className="text-xs uppercase tracking-widest font-bold mb-8 text-brand">Services</h3>
+            <h3 className="text-xs uppercase tracking-widest font-bold mb-8 text-brand">Products</h3>
             <ul className="space-y-4 text-sm text-gray-400">
-              <li><Link to="/services" className="hover:text-white transition-colors">AC Installation</Link></li>
-              <li><Link to="/services" className="hover:text-white transition-colors">Maintenance & Repair</Link></li>
               <li><Link to="/products" className="hover:text-white transition-colors">Ceramic Collections</Link></li>
               <li><Link to="/products" className="hover:text-white transition-colors">Sanitaryware</Link></li>
+              <li><Link to="/contact" className="hover:text-white transition-colors">Consultation</Link></li>
             </ul>
           </div>
 

@@ -24,7 +24,7 @@ export default function Contact() {
             >
               <h2 className="text-3xl font-bold text-gray-900 mb-2">Get in Touch</h2>
               <p className="text-gray-500 text-sm mb-12 leading-relaxed">
-                Visit our showroom for high-end ceramics and premium air conditioning solutions.
+                Visit our showroom for premium bathroom fittings and sanitaryware solutions.
               </p>
               
               <div className="space-y-8">
@@ -55,8 +55,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Call Us</h4>
-                    <p className="text-sm text-gray-800 font-medium">+91 9108315736</p>
-                    <p className="text-sm text-gray-800 font-medium">+91 9108315736</p>
+                    <p className="text-sm text-gray-800 font-medium">+91 9741040290</p>
+                    <p className="text-sm text-gray-800 font-medium">+91 6364940676</p>
                   </div>
                 </div>
 
@@ -115,8 +115,7 @@ export default function Contact() {
                     />
                     <select className="w-full p-3 bg-gray-50 border border-gray-200 text-sm outline-none focus:border-brand text-gray-500 cursor-pointer">
                       <option>Select Interest</option>
-                      <option>Tiles & Ceramics</option>
-                      <option>Air Conditioning</option>
+                      <option>Ceramics</option>
                       <option>Bath Fittings</option>
                     </select>
                     <textarea 
@@ -137,32 +136,15 @@ export default function Contact() {
               {/* Category Previews */}
               <div className="flex flex-col space-y-8 h-full">
                 <div className="relative flex-1 rounded-sm overflow-hidden group">
-                  <img 
-                    src="https://images.unsplash.com/photo-1621600411666-47447274ccd5?q=80&w=800" 
-                    className="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" 
-                    alt="Ceramics"
-                    referrerPolicy="no-referrer"
-                  />
-                  <div className="absolute inset-0 bg-blue-900/70 flex flex-col justify-end p-6 text-white translate-y-0 group-hover:bg-brand-dark/80 transition-all">
+                  <div className="absolute inset-0 bg-gradient-to-br from-slate-200 to-slate-300"></div>
+                  <div className="absolute inset-0 bg-blue-900/70 flex flex-col justify-start p-6 text-white translate-y-0 group-hover:bg-brand-dark/80 transition-all">
                     <span className="text-[10px] uppercase tracking-[0.3em] font-bold opacity-80 mb-1">Interior Solutions</span>
                     <h4 className="text-lg font-extrabold uppercase tracking-tight">Exclusive Ceramics</h4>
                     <p className="text-[11px] opacity-70 mt-1 leading-relaxed">Imported Italian tiles and designer bathroom ceramics.</p>
                   </div>
                 </div>
                 
-                <div className="relative flex-1 rounded-sm overflow-hidden group">
-                  <img 
-                    src="https://images.unsplash.com/photo-1631548231168-30113a35fd69?q=80&w=800" 
-                    className="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" 
-                    alt="AC Units"
-                    referrerPolicy="no-referrer"
-                  />
-                  <div className="absolute inset-0 bg-gray-900/70 flex flex-col justify-end p-6 text-white translate-y-0 group-hover:bg-gray-800/80 transition-all">
-                    <span className="text-[10px] uppercase tracking-[0.3em] font-bold opacity-80 mb-1">Climate Comfort</span>
-                    <h4 className="text-lg font-extrabold uppercase tracking-tight">Industrial Cooling</h4>
-                    <p className="text-[11px] opacity-70 mt-1 leading-relaxed">Authorized dealers for high-efficiency VRF and split AC systems.</p>
-                  </div>
-                </div>
+
               </div>
 
             </div>
