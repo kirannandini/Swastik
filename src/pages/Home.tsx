@@ -26,7 +26,7 @@ export default function Home() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-brand text-xs font-bold tracking-[0.3em] uppercase mb-6 block bg-brand/10 px-4 py-2 rounded-full w-fit"
+              className="text-white text-xs font-bold tracking-[0.3em] uppercase mb-6 block bg-white/15 px-4 py-2 rounded-full w-fit border border-white/30 shadow-sm"
             >
               Redefining Modern Living
             </motion.span>
@@ -128,14 +128,8 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-center rounded-3xl p-8 bg-gradient-to-br from-amber-50 via-orange-50 to-rose-50 shadow-2xl border border-white/60"
             >
-              <div className="text-sm text-gray-600 uppercase tracking-wider">Premium Brands</div>
-            </motion.div>
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="text-center rounded-3xl p-8 bg-gradient-to-br from-green-50 via-lime-50 to-teal-50 shadow-2xl border border-white/60"
-            >
+        
+       
               <div className="text-3xl md:text-4xl font-bold text-brand mb-2">24/7</div>
               <div className="text-sm text-gray-600 uppercase tracking-wider">Customer Support</div>
             </motion.div>
