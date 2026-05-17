@@ -136,11 +136,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               </li>
               <li className="flex items-center space-x-4">
                 <Phone size={18} className="text-brand shrink-0" />
-                <span className="text-gray-400">+91 9108315736</span>
+                <span className="text-gray-400">+91 9741040290</span>
               </li>
               <li className="flex items-center space-x-4">
                 <Mail size={18} className="text-brand shrink-0" />
-                <span className="text-gray-400">info@swastikac.com</span>
+                <span className="text-gray-400">swastikceramic.co@gmail.com</span>
               </li>
             </ul>
           </div>
