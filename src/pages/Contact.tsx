@@ -66,7 +66,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h4 className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Email</h4>
-                    <p className="text-sm text-gray-800 font-medium">info@swastikac.com</p>
+                    <p className="text-sm text-gray-800 font-medium">swastikceramic.co@gmail.com</p>
                   </div>
                 </div>
 

@@ -69,11 +69,11 @@ export default function Products() {
               className="group cursor-pointer"
               onClick={() => setSelectedImage(prod.img)}
             >
-              <div className="aspect-[4/5] bg-gray-100 overflow-hidden mb-3 rounded-sm relative border border-gray-100">
+                <div className="aspect-[4/5] bg-gray-100 overflow-hidden mb-3 rounded-sm relative border border-gray-100">
                 <img 
                   src={prod.img} 
                   alt={prod.name} 
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700"
+                  className="w-full h-full object-cover group-hover:scale-110 transition-all duration-700"
                   referrerPolicy="no-referrer"
                 />
                 <div className="absolute inset-0 bg-brand-dark/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
